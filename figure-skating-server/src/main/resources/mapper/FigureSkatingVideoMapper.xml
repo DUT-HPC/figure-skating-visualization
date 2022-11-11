@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.leslie.mapper.SingerMapper">
-  <resultMap id="BaseResultMap" type="com.example.leslie.model.domain.Singer">
+<mapper namespace="com.example.leslie.mapper.FigureSkatingVideoMapper">
+  <resultMap id="BaseResultMap" type="com.example.leslie.model.domain.FigureSkatingVideo">
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="sex" property="sex" jdbcType="TINYINT" />
-    <result column="pic" property="pic" jdbcType="VARCHAR" />
-    <result column="birth" property="birth" jdbcType="TIMESTAMP" />
-    <result column="location" property="location" jdbcType="VARCHAR" />
+    <result column="video_pic" property="video_pic" jdbcType="VARCHAR" />
+    <result column="video_path" property="video_path" jdbcType="VARCHAR" />
+    <result column="player" property="player" jdbcType="VARCHAR" />
+    <result column="player_pic" property="player_pic" jdbcType="VARCHAR" />
+    <result column="music" property="music" jdbcType="VARCHAR" />
     <result column="introduction" property="introduction" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="TINYINT" />
+    <result column="openpose_video_path" property="openpose_video_path" jdbcType="VARCHAR" />
+    <result column="segment_video_path" property="segment_video_path" jdbcType="VARCHAR" />
+    <result column="type_list" property="type_list" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, sex, pic, birth, location, introduction
+    id, name, video_pic, video_path, player, player_pic, music,introduction, age, openpose_video_path, segment_video_path, type_list
   </sql>
 
 </mapper>

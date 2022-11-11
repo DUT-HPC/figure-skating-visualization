@@ -6,10 +6,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * 集中一下图像的配置类吧
- *
- * @Author 祝英台炸油条
- * @Time : 2022/6/5 22:23
+ * 图像的配置类
+ * @Time 2019/11/14 15:00
  **/
 @Configuration
 public class WebPicConfig implements WebMvcConfigurer {
@@ -29,6 +27,8 @@ public class WebPicConfig implements WebMvcConfigurer {
                 .addResourceLocations(Constants.SONGLIST_PIC_PATH);
         registry.addResourceHandler("/img/swiper/**")
                 .addResourceLocations(Constants.BANNER_PIC_PATH);
+        registry.addResourceHandler("/img/figureSkatingSwiper/**")
+                .addResourceLocations(Constants.FIGURESKATINGBANNER_PIC_PATH);
     }
 
 }

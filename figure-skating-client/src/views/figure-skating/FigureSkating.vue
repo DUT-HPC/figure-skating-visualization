@@ -5,26 +5,86 @@
       <img :src="HttpManager.attachImageUrl(item.pic)" />
     </el-carousel-item>
   </el-carousel>
-  <!--热门歌单-->
-  <play-list class="play-list-container" title="歌单" path="song-sheet-detail" :playList="songList"></play-list>
-  <!--热门歌手-->
-  <play-list class="play-list-container" title="歌手" path="singer-detail" :playList="singerList"></play-list>
+<!--  &lt;!&ndash;热门歌单&ndash;&gt;-->
+<!--  <play-list class="play-list-container" title="歌单" path="song-sheet-detail" :playList="songList"></play-list>-->
+<!--  &lt;!&ndash;热门歌手&ndash;&gt;-->
+<!--  <play-list class="play-list-container" title="歌手" path="singer-detail" :playList="singerList"></play-list>-->
+  <!--花样滑冰视频-->
+  <play-list :playList="data"  title="单人滑" path="singer-detail"></play-list>
+  <el-pagination
+      class="pagination"
+      background
+      layout="total, prev, pager, next"
+      :current-page="currentPage"
+      :page-size="pageSize"
+      :total="allPlayList.length"
+      @current-change="handleCurrentChange"
+  >
+  </el-pagination>
+
+
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
+import {ref, onMounted, computed} from "vue";
 import PlayList from "@/components/PlayList.vue";
 import {  NavName } from "@/enums";
 import { HttpManager } from "@/api";
 import mixin from "@/mixins/mixin";
 
+import YinNav from "@/components/layouts/YinNav.vue";
+import { singerStyle } from "@/enums";
+
+
 const songList = ref([]); // 歌单列表
 const singerList = ref([]); // 歌手列表
 const swiperList = ref([]);// 轮播图 每次都在进行查询
 const { changeIndex } = mixin();
+
+const activeName = ref("全部歌手");
+const pageSize = ref(15); // 页数
+const currentPage = ref(1); // 当前页
+const allPlayList = ref([]);
+
+// computed
+const data = computed(() => {
+  return allPlayList.value.slice((currentPage.value - 1) * pageSize.value, currentPage.value * pageSize.value);
+});
+
+// 获取所有歌手
+async function getAllSinger() {
+  const result = (await HttpManager.getAllSinger()) as ResponseBody;
+  currentPage.value = 1;
+  allPlayList.value = result.data;
+}
+
+getAllSinger();
+
+// 获取当前页
+function handleCurrentChange(val) {
+  currentPage.value = val;
+}
+
+function handleChangeView(item) {
+  activeName.value = item.name;
+  allPlayList.value = [];
+  if (item.name === "全部歌手") {
+    getAllSinger();
+  } else {
+    getSingerSex(item.type);
+  }
+}
+
+// 通过性别对歌手分类
+async function getSingerSex(sex) {
+  const result = (await HttpManager.getSingerOfSex(sex)) as ResponseBody;
+  currentPage.value = 1;
+  allPlayList.value = result.data;
+}
+
 try {
 
-  HttpManager.getBannerList().then((res) => {
+  HttpManager.getFigureSkatingBannerList().then((res) => {
     swiperList.value = (res as ResponseBody).data.sort();
   });
 

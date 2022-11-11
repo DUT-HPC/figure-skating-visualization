@@ -89,7 +89,10 @@ const HttpManager = {
   insertUserSupport:({commentId,userId}) => post(`userSupport/insert`, {commentId,userId}),
 
   //获取所有的海报
-  getBannerList: () => get("banner/getAllBanner")
+  getBannerList: () => get("banner/getAllBanner"),
+
+  //获取花样滑冰首页
+  getFigureSkatingBannerList: () => get("figureSkatingBanner/getAllBanner"),
 };
 
 
