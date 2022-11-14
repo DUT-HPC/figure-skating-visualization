@@ -34,6 +34,11 @@ const HttpManager = {
   // 通过性别对歌手分类
   getSingerOfSex: (sex) => get(`singer/sex/detail?sex=${sex}`),
 
+  getAllPlayer: () => get("player"),
+
+  // openpose video 视频链接
+  VideoPath: (url) => url ? `${getBaseURL()}/video/${url}` : "https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png",
+
   // =======================> 收藏 API 完成
   // 返回的指定用户ID的收藏列表
   getCollectionOfUser: (userId) => get(`collection/detail?userId=${userId}`),
@@ -75,6 +80,10 @@ const HttpManager = {
   getSongOfId: (id) => get(`song/detail?id=${id}`),
   // 返回指定歌手ID的歌曲
   getSongOfSingerId: (id) => get(`song/singer/detail?singerId=${id}`),
+
+  // 返回指定选手ID的视频
+  getVideoOfPlayerId: (id) => get(`figureSkating/player/detail?playerId=${id}`),
+
   // 返回指定歌手名的歌曲
   getSongOfSingerName: (keywords) => get(`song/singerName/detail?name=${keywords}`),
   // 下载音乐

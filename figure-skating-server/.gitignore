@@ -16,6 +16,7 @@ target/
 img/
 song/
 logs/
+video/
 
 ### IntelliJ IDEA ###
 .idea

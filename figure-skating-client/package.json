@@ -1,5 +1,5 @@
 {
-  "name": "music-client",
+  "name": "figure-skating-client",
   "version": "3.0.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,9 @@
     "core-js": "^3.8.3",
     "element-plus": "^2.0.4",
     "vue": "^3.2.13",
+    "vue-mini-player": "^0.2.1",
     "vue-router": "^4.0.3",
+    "vue-video-player": "^6.0.0",
     "vuex": "^4.0.0"
   },
   "devDependencies": {

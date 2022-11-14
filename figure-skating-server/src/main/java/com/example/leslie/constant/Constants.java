@@ -10,7 +10,10 @@ public class Constants {
     public static String SINGER_PIC_PATH = "file:" + PROJECT_PATH + "/img/singerPic/";
     public static String BANNER_PIC_PATH = "file:" + PROJECT_PATH + "/img/swiper/";
     public static String FIGURESKATINGBANNER_PIC_PATH = "file:" + PROJECT_PATH + "/img/figureSkatingSwiper/";
-
+    public static String PLAYER_PIC_PATH = "file:" + PROJECT_PATH + "/img/player_pic/";
+    public static String OPENPOSE_VIDEO_PATH = "file:" + PROJECT_PATH + "/video/openpose_video/";
+    public static String SEGMENT_VIDEO_PATH = "file:" + PROJECT_PATH + "/video/segement_video/";
+    public static String VIDEO_PATH = "file:" + PROJECT_PATH + "/video/video/";
 
     /* 盐值加密 */
     public static String SALT = "zyt";

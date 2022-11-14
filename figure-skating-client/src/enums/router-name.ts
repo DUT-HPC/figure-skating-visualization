@@ -1,5 +1,5 @@
 export const enum RouterName {
-  Home = "/",
+  Home = "/figure-skating",
   SongSheet = "/song-sheet",
   SongSheetDetail = "/song-sheet-detail",
   Singer = "/singer",
@@ -13,5 +13,7 @@ export const enum RouterName {
   Lyric = "/lyric",
   Error = "/404",
   SignOut = "0",
-  FigureSkating = "/figure-skating"
+  FigureSkating = "/figure-skating",
+  PlayerDetail = "/player-detail",
+  VideoPlay = "/video-play"
 }

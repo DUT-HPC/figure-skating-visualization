@@ -77,7 +77,7 @@ export default defineComponent({
   .card {
     position: relative;
     height: 0;
-    padding-bottom: 100%;
+    padding-bottom: 65%;
     overflow: hidden;
     border-radius: 5px;
 

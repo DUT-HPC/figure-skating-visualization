@@ -7,4 +7,8 @@ import com.example.leslie.model.domain.FigureSkatingVideo;
 public interface FigureSkatingVideoService extends IService<FigureSkatingVideo> {
 
     R allFigureSkatingVideo();
+
+    R allFigureSkatingPlayer();
+
+    R figureSkatingVideoOfPlayerId(int playerId);
 }

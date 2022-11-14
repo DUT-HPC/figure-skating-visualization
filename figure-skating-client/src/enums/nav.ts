@@ -18,18 +18,18 @@ export const HEADERNAVLIST = [
     name: NavName.Home,
     path: RouterName.Home,
   },
-  {
-    name: NavName.SongSheet,
-    path: RouterName.SongSheet,
-  },
-  {
-    name: NavName.Singer,
-    path: RouterName.Singer,
-  },
-  {
-    name: NavName.FigureSkating,
-    path: RouterName.FigureSkating,
-  },
+  // {
+  //   name: NavName.SongSheet,
+  //   path: RouterName.SongSheet,
+  // },
+  // {
+  //   name: NavName.Singer,
+  //   path: RouterName.Singer,
+  // },
+  // {
+  //   name: NavName.FigureSkating,
+  //   path: RouterName.FigureSkating,
+  // },
 ];
 
 // 右侧导航栏
