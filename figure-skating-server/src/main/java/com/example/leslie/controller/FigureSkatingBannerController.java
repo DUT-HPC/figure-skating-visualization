@@ -12,12 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/figureSkatingBanner")
 public class FigureSkatingBannerController {
     @Autowired
     private FigureSkatingBannerService figureSkatingService;
 
-    @GetMapping("/getAllBanner")
+    @GetMapping("/figureSkatingBanner/getAllBanner")
     public R getAllBanner(){
         return R.success("成功获取轮播图与",figureSkatingService.getAllBanner());
     }

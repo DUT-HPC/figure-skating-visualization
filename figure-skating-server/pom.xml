@@ -142,6 +142,7 @@
     </repositories>
 
     <build>
+        <finalName>figure-skating-server</finalName>
         <plugins>
             <!-- 加上这段代码  打包插件 因为启动不起来 -->
             <plugin>
